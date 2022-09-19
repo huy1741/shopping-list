@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with Create React App. This is a shopping list website where you can add new products, edit and delete them. A product will have 2 attributes which are name and amount. Each time you refresh the page 5-15 items will be generated randomly. At first I decided to use hooks for state management but I think it is complex enough to use Redux and it is quite a good place to use it as well. As for the text fields I use Material Ui which is handy and has great customization. As for quality of code, I use TypeScript to make the code more concise and have more control. I also use container and its corresponding file structure to have clearer state importing from redux and action from action creator. Online demo can be found here: shopping-list-huy-nguyen.netlify.app
 
 ## Available Scripts
 
