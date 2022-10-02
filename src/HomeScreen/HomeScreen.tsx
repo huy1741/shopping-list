@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { ProductDetailsTop } from '../ProductDetails/ProductDetailsTop'
-import { ProductDetailsBot } from '../ProductDetails/ProductDetailsBot'
+import { ProductDetailsTop } from '../ProductDetails/ProductDetailsTop/ProductDetailsTop'
+import { ProductDetailsBot } from '../ProductDetails/ProductDetailsBot/ProductDetailsBot'
 import logo from '../resource/logo.png'
 import { generateList } from '../utils'
 import CircularProgress from '@mui/material/CircularProgress'
@@ -15,7 +15,7 @@ interface Props{
 }
 export const HomeScreen : React.FC<Props> = ({addList, data, addProduct, deleteProduct, editProduct}) => {
   useEffect(() => {
-    // Update the document title using the browser API
+    // Generate a list of products
     addList(generateList())
   }, [addList])
   return <div className='container'>
@@ -25,10 +25,10 @@ export const HomeScreen : React.FC<Props> = ({addList, data, addProduct, deleteP
         </div>
         <ProductDetailsTop data={data} deleteProduct={deleteProduct} editProduct={editProduct}/>
         <ProductDetailsBot addProduct={addProduct}/>
-        { data.length < 1 &&
+        {data.length < 1 &&
           <Box className="circulation">
            <CircularProgress />
            <h1>The list is being loaded or you can just add something.</h1>
-         </Box>}
+          </Box>}
         </div>
 }
